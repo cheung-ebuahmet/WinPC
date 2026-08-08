@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "markitdown": {
+      "command": "D:\\Program Files\\Python310\\Scripts\\markitdown-mcp.exe",
+      "args": []
+    }
+  }
+}

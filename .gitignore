@@ -1,0 +1,24 @@
+# Backups (4.3 GB - not version controlled)
+_backup/
+
+# OCR models (re-downloadable)
+PaddleOCR/
+
+# Temporary build artifacts
+_temp-build/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
