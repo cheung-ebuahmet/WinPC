@@ -1,4 +1,4 @@
-# ============================================================================
+﻿# ============================================================================
 # Wison + My Projects 知识库定期备份
 # ============================================================================
 # 策略（智能备份，不是为备份而备份）：
@@ -27,6 +27,7 @@ $OutputEncoding = [System.Text.UTF8Encoding]::new()
 $backupRoot = "D:\Documents\My Projects\_backup"
 $keepCopies = 4
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+$failed = $false
 
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "  Wison + My Projects 知识库备份" -ForegroundColor Cyan
@@ -83,6 +84,7 @@ if ($wisonExit -lt 8) {
     Write-Host "  OK — $wisonSize MB (exit $wisonExit)" -ForegroundColor Green
 } else {
     Write-Host "  异常 — robocopy exit $wisonExit" -ForegroundColor Red
+    $failed = $true
 }
 
 # Git bundle: 把 Git 历史打包成单文件（方便离线还原）
@@ -123,6 +125,7 @@ if ($mpExit -lt 8) {
     Write-Host "  OK — $mpSizeMB KB (exit $mpExit)" -ForegroundColor Green
 } else {
     Write-Host "  异常 — robocopy exit $mpExit" -ForegroundColor Red
+    $failed = $true
 }
 
 Write-Host ""
@@ -147,3 +150,11 @@ Write-Host "  备份总占用: $([math]::Round($totalSize, 1)) MB" -ForegroundCo
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "  Done: $backupRoot" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
+
+# 显式退出码：让计划任务能正确区分成功/失败（robocopy 的 0-7 是成功，
+# 若不显式 exit，进程会把最后的 $LASTEXITCODE 带出，成功也被记为 1）
+if ($failed) {
+    exit 1
+} else {
+    exit 0
+}

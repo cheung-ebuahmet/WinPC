@@ -1,0 +1,4 @@
+# Arabic Language
+
+> 存放 Arabic Language（阿拉伯语）的题目与答案。
+> 追加格式：`## Q###` 标题 + `**题目 (Question):**` + `**答案 (Answer):**`，题与题之间用 `---` 分隔，编号由 Claude 自动递增。

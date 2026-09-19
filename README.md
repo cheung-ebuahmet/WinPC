@@ -18,11 +18,14 @@ My Projects/
 │   └── upgrade/                ← Windows 升级诊断（仅参考）
 ├── guides/                     ← 参考文档
 ├── config/                     ← 配置文件
+├── career/                     ← 个人私人：职业档案
+├── exam-question-bank/         ← 个人私人：期末考题库（伊斯兰课程）
 └── memory/                     ← Claude Code 自动记忆（.claude 内部）
 ```
 
-> ⚠️ **重要：** 这个目录只存放管理系统和软件的脚本/指南。
-> **工程文件**在 `D:\Documents\Wilson\`（合同、图纸、项目文档）——两者完全分开，互不影响。
+> ⚠️ **重要：** 本目录 = 系统/软件脚本 + 个人私人资料。
+> `career/` 与 `exam-question-bank/` 是**个人私人**资料，与 Wison 合同工作**完全隔离、互不污染**。
+> **工程文件**（合同、图纸、项目文档）在 `D:\Wison\` —— 绝不写入本目录，两者完全分开。
 
 ---
 
@@ -126,7 +129,7 @@ My Projects/
 
 | 工具集 | 位置 | 用途 |
 |------|------|------|
-| **PDF 工具箱** | `D:\Applications\ocr-tools\` | OCR、PDF→MD、可搜索 PDF |
+| **PDF 工具箱** | `D:\Wison\_tools\ocr-tools\` | OCR、PDF→MD、可搜索 PDF |
 | **系统备份** | `D:\Program Files\Backup\` | 应用配置 + 注册表 + 开始菜单一键备份恢复 |
 | **应用软件** | `D:\Program Files\<App>\` | 所有应用安装目录 |
 | **用户数据** | `D:\Documents\` | 聊天记录、邮件、工程文件 |
